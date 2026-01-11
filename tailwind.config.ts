@@ -57,6 +57,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom diary theme colors
+        paper: "hsl(var(--paper))",
+        ink: "hsl(var(--ink))",
+        "ink-light": "hsl(var(--ink-light))",
+        sepia: "hsl(var(--sepia))",
+        gold: "hsl(var(--gold))",
+        star: "hsl(var(--star))",
+      },
+      fontFamily: {
+        display: ['Crimson Pro', 'serif'],
+        body: ['Inter', 'sans-serif'],
+        handwritten: ['Lora', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
