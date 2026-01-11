@@ -1,96 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Paper & Diary Theme */
+    --background: 40 33% 96%;
+    --foreground: 30 15% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 30% 94%;
+    --card-foreground: 30 15% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 30% 94%;
+    --popover-foreground: 30 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Ink blue primary */
+    --primary: 220 60% 35%;
+    --primary-foreground: 40 33% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm sepia secondary */
+    --secondary: 35 40% 88%;
+    --secondary-foreground: 30 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 25% 90%;
+    --muted-foreground: 30 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Gold accent */
+    --accent: 38 70% 55%;
+    --accent-foreground: 30 30% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 30% 80%;
+    --input: 35 30% 85%;
+    --ring: 220 60% 35%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom diary colors */
+    --paper: 40 35% 97%;
+    --paper-shadow: 35 25% 75%;
+    --ink: 220 50% 25%;
+    --ink-light: 220 40% 45%;
+    --sepia: 35 50% 45%;
+    --gold: 38 70% 55%;
+    --star: 45 80% 70%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar - kept for compatibility */
+    --sidebar-background: 40 30% 95%;
+    --sidebar-foreground: 30 15% 25%;
+    --sidebar-primary: 220 60% 35%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 35 40% 88%;
+    --sidebar-accent-foreground: 30 30% 25%;
+    --sidebar-border: 35 30% 80%;
+    --sidebar-ring: 220 60% 35%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 15% 12%;
+    --foreground: 40 30% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 15% 15%;
+    --card-foreground: 40 30% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 15% 15%;
+    --popover-foreground: 40 30% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 45 70% 60%;
+    --primary-foreground: 30 15% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 20% 22%;
+    --secondary-foreground: 40 30% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 15% 20%;
+    --muted-foreground: 40 20% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 60% 50%;
+    --accent-foreground: 30 15% 12%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 30% 90%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 45 70% 60%;
+
+    --paper: 30 15% 14%;
+    --paper-shadow: 30 10% 8%;
+    --ink: 45 70% 75%;
+    --ink-light: 45 50% 60%;
+    --sepia: 35 40% 55%;
+    --gold: 38 60% 50%;
+    --star: 45 70% 55%;
+
+    --sidebar-background: 30 15% 14%;
+    --sidebar-foreground: 40 30% 90%;
+    --sidebar-primary: 45 70% 60%;
+    --sidebar-primary-foreground: 30 15% 12%;
+    --sidebar-accent: 30 20% 22%;
+    --sidebar-accent-foreground: 40 30% 85%;
+    --sidebar-border: 30 15% 25%;
+    --sidebar-ring: 45 70% 60%;
   }
 }
 
@@ -100,6 +114,141 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23374785' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 21l4-4'/%3E%3Cpath d='M6 18L18 6l-1-1L5 17l1 1z'/%3E%3Cpath d='M19 5l-1-1-2 2 1 1 2-2z'/%3E%3C/svg%3E") 0 24, auto;
+  }
+
+  a, button {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23374785' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 21l4-4'/%3E%3Cpath d='M6 18L18 6l-1-1L5 17l1 1z'/%3E%3Cpath d='M19 5l-1-1-2 2 1 1 2-2z'/%3E%3C/svg%3E") 0 24, pointer;
+  }
+}
+
+@layer components {
+  .paper-texture {
+    background-color: hsl(var(--paper));
+    background-image: 
+      linear-gradient(90deg, transparent 79px, hsl(var(--border)) 79px, hsl(var(--border)) 81px, transparent 81px),
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 100% 32px;
+    background-position: 0 16px;
+  }
+
+  .paper-shadow {
+    box-shadow: 
+      0 4px 6px -1px hsl(var(--paper-shadow) / 0.2),
+      0 10px 25px -5px hsl(var(--paper-shadow) / 0.3),
+      0 20px 50px -12px hsl(var(--paper-shadow) / 0.4),
+      inset 0 0 60px hsl(var(--paper-shadow) / 0.05);
+  }
+
+  .ink-text {
+    color: hsl(var(--ink));
+  }
+
+  .ink-light-text {
+    color: hsl(var(--ink-light));
+  }
+
+  .sepia-text {
+    color: hsl(var(--sepia));
+  }
+
+  .gold-accent {
+    color: hsl(var(--gold));
+  }
+
+  .skill-block {
+    @apply px-4 py-2 rounded-lg border transition-all duration-300;
+    background: hsl(var(--secondary));
+    border-color: hsl(var(--border));
+  }
+
+  .skill-block:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px hsl(var(--paper-shadow) / 0.2);
+    background: hsl(var(--card));
+  }
+
+  .article-card {
+    @apply p-5 rounded-xl border transition-all duration-300;
+    background: hsl(var(--card));
+    border-color: hsl(var(--border));
+  }
+
+  .article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px hsl(var(--paper-shadow) / 0.25);
+    border-color: hsl(var(--primary));
+  }
+
+  .section-title {
+    @apply font-display text-2xl font-semibold tracking-wide mb-6;
+    color: hsl(var(--ink));
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--gold)), transparent);
+    border-radius: 2px;
+  }
+
+  .quote-text {
+    @apply italic text-lg leading-relaxed;
+    color: hsl(var(--sepia));
+    font-family: 'Lora', serif;
+  }
+
+  .diary-entry {
+    @apply leading-relaxed;
+    color: hsl(var(--ink-light));
+    font-family: 'Lora', serif;
+    text-indent: 2rem;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Crimson Pro', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-handwritten {
+    font-family: 'Lora', serif;
+    font-style: italic;
+  }
+
+  .text-ink {
+    color: hsl(var(--ink));
+  }
+
+  .text-sepia {
+    color: hsl(var(--sepia));
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-paper {
+    background-color: hsl(var(--paper));
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
   }
 }
